@@ -15,7 +15,7 @@ ALLTEST     = $(shell find test/ -name '*.cpp') $(shell find test/ -name '*.h')
 # compile & link flages
 CFLAGS     = -std=c++11 -Wall -fPIC -g
 LIBFLAGS   = -shared
-TARGET     = libsqlparser.so
+TARGET     = libsqlparser2.so
 INSTALL    = /usr/local
 
 CTESTFLAGS = -Wall -Isrc/ -Itest/ -L./ -std=c++11 -lstdc++ -g
