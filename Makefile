@@ -12,11 +12,11 @@ TESTCPP     = $(shell find test/ -name '*.cpp')
 ALLLIB      = $(shell find $(SRC) -name '*.cpp' -not -path "$(SRCPARSER)/*") $(shell find $(SRC) -name '*.h' -not -path "$(SRCPARSER)/*")
 ALLTEST     = $(shell find test/ -name '*.cpp') $(shell find test/ -name '*.h')
 
-# compile & link flages
+# compile & link flags
 CFLAGS     = -std=c++11 -Wall -fPIC -g
 LIBFLAGS   = -shared
 TARGET     = libsqlparser2.so
-INSTALL    = /usr/local
+INSTALL    = $(HOME)
 
 CTESTFLAGS = -Wall -Isrc/ -Itest/ -L./ -std=c++11 -lstdc++ -g
 
@@ -64,7 +64,7 @@ run_benchmark:
 test: $(BIN)/sql_tests
 	bash test/test.sh
 
-# test whete
+# test where
 test_install:
 	make -C example/
 	./example/example "SELECT * FROM students WHERE name = 'Max Mustermann';"
